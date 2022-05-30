@@ -4,7 +4,7 @@ import {
     AddNewGroupBasicsPage, 
     AddNewGroupPropertiesPage, 
     AddNewGroupPortalPage, 
-    CheckNewGroupStatus
+    NewGroupValidation
 } from '../support/commands'
 
 describe('Groups page actions', function () {
@@ -28,6 +28,6 @@ describe('Groups page actions', function () {
         AddNewGroupPortalPage()
     })
     it('should check the new group status on the groups page', () => {
-        CheckNewGroupStatus()
+        NewGroupValidation()
     })
 })
