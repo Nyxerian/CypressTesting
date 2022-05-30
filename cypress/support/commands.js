@@ -42,7 +42,7 @@ export function dashboardDataIncludes() {
 
 export function AddNewGroupBasicsPage() {
     cy.get('.top-menu-button > .q-btn > .q-btn__wrapper > .q-btn__content').click()
-    cy.get('[data-cy="name"]').type('My New Test Group22')
+    cy.get('[data-cy="name"]').type('My New Test Group25')
     cy.get('[data-cy="contact-email"]').type('my-new-test-group@io.co.za')
     cy.get('.q-stepper__nav > .q-btn > .q-btn__wrapper > .q-btn__content').click()
 }
@@ -55,13 +55,6 @@ export function AddNewGroupPortalPage() {
     cy.get('[data-cy="portal-id"]').click()
     cy.contains('IO Digital').click()
     cy.get('.q-stepper__nav > .q-btn > .q-btn__wrapper > .q-btn__content').click()
-}
-
-export function CheckNewGroupStatus() {
-    cy.get('.row.q-pb-md > .col-12').should('include.text', 'My New Test Group22')
-    cy.get('.row.q-pb-md > .col-12').should('include.text',  '0',)
-   //TODO find out how to check the DRAFT BUTTON
-    
 }
 
 //***********************PROPERTIES FUNCTIONS****************************//
@@ -140,6 +133,21 @@ export function CreateNewPropertyPortal() {
     cy.get('.finish-button-black > .q-btn__wrapper > .q-btn__content').click()
 }
 
+//***********************CLEAN UP FUNCTIONS****************************//
 
-//***********************GROUP CLEAN UP FUNCTIONS****************************//
 
+
+
+//***********************VALIDATION FUNCTIONS****************************//
+
+export function CheckNewGroupStatus() {
+    cy.get('.row.q-pb-md > .col-12').should('include.text', 'My New Test Group25')
+    cy.get('.row.q-pb-md > .col-12').should('include.text',  '0',)   
+    cy.get(':nth-child(1) > .q-td.text-center > .q-badge').should('include.text', 'draft')
+}
+
+export function CheckNewPropertyStatus() {
+    cy.get(':nth-child(4) > [style="width: 260px; text-transform: capitalize;"]').should('include.text', 'My Test Hotel')
+    cy.get(':nth-child(4) > [style="min-width: 100px; text-transform: capitalize;"]').should('include.text',  'Hotel',)
+    cy.get(':nth-child(4) > .q-td.text-center').should('include.text', 'active')
+}

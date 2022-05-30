@@ -27,7 +27,7 @@ describe('Groups page actions', function () {
     it('should select the IO Digital option from the dropdown', () => {
         AddNewGroupPortalPage()
     })
-    it('should check the new group status on the groups page', () => {
+    it('should Validate the new group status on the groups page', () => {
         CheckNewGroupStatus()
     })
 })

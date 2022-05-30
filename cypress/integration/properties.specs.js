@@ -11,6 +11,7 @@ import {
     CreateNewPropertyGateway,
     CreateNewPropertyInterface,
     CreateNewPropertyPortal,
+    CheckNewPropertyStatus,
 } from '../support/commands'
 
 describe('Login to site and navigate to properties', () => {
@@ -51,5 +52,9 @@ describe('Login to site and navigate to properties', () => {
 
     it('Should select IO Digital from the list', () => {
         CreateNewPropertyPortal()
+    })
+
+    it('Should Validate the status of the newly created Property', () => {
+        CheckNewPropertyStatus()
     })
 });
