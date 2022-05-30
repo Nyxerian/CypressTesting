@@ -98,12 +98,16 @@ export function CreateNewPropertyAddressAndContact() {
     cy.get('.q-stepper__nav > .q-btn > .q-btn__wrapper > .q-btn__content').click()
 }
 
+//***********************PROPERTY AUTHENTICATION FUNCTIONS****************************//
+
 export function CreateNewPropertyAuthentication() {
     cy.get('.col-3 > .q-field > .q-field__inner > .q-field__control').type('10')
     cy.get('.col-9 > .q-field > .q-field__inner > .q-field__control').click()
     cy.contains('Shared WiFi').click()
     cy.get('.finish-button > .q-btn__wrapper').click()
 }
+
+//***********************PROPERTY GATEWAY FUNCTIONS****************************//
 
 export function CreateNewPropertyGateway() {
     cy.get('[data-cy="gateway-type-id"]').click()
@@ -116,25 +120,19 @@ export function CreateNewPropertyGateway() {
     cy.get('.finish-button > .q-btn__wrapper').click()
 }
 
+//***********************PROPERTY INTERFACE FUNCTIONS****************************//
+
 export function CreateNewPropertyInterface() {
-    cy.get('[data-cy="property-interface-type-id"]').click()
+    cy.contains('Interface Type').click()
     cy.contains('FIAS').click()
     cy.get('[data-cy="host"]').type('HostIsHosting')
-    cy.get('[data-cy="package-id"]').click()
-    cy.contains('10GB / 10Mbps')
+    cy.contains('Package').click()
+    cy.contains('10GB / 10Mbps').click()
     cy.get('[data-cy="port"]').type('8000')
     cy.get('[data-cy="sales-outlet"]').type('Area 51')
+    cy.get('.finish-button > .q-btn__wrapper > .q-btn__content').click()
 }
-
-
-
-//***********************AUTHENTICATION FUNCTIONS****************************//
-
-//***********************GATEWAY FUNCTIONS****************************//
-
-//***********************INTERFACE FUNCTIONS****************************//
-
-//***********************PORTAL FUNCTIONS****************************//
+//***********************PROPERTY PORTAL FUNCTIONS****************************//
 
 
 //***********************GROUP CLEAN UP FUNCTIONS****************************//
