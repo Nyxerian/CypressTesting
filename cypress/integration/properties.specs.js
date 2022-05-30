@@ -8,7 +8,8 @@ import {
     CreateNewPropertyCommunicationPreference,
     CreateNewPropertyAddressAndContact,
     CreateNewPropertyAuthentication,
-    CreateNewPropertyGateway
+    CreateNewPropertyGateway,
+    CreateNewPropertyInterface,
 } from '../support/commands'
 
 describe('Login to site and navigate to properties', () => {
@@ -41,5 +42,9 @@ describe('Login to site and navigate to properties', () => {
     
     it('Should set the Gateway details for the new Property', () => {
         CreateNewPropertyGateway()
+    })
+
+    it('Should fill in the Interface details for the new Property', () => {
+        CreateNewPropertyInterface()
     })
 });

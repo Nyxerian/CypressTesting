@@ -116,6 +116,16 @@ export function CreateNewPropertyGateway() {
     cy.get('.finish-button > .q-btn__wrapper').click()
 }
 
+export function CreateNewPropertyInterface() {
+    cy.get('[data-cy="property-interface-type-id"]').click()
+    cy.contains('FIAS').click()
+    cy.get('[data-cy="host"]').type('HostIsHosting')
+    cy.get('[data-cy="package-id"]').click()
+    cy.contains('10GB / 10Mbps')
+    cy.get('[data-cy="port"]').type('8000')
+    cy.get('[data-cy="sales-outlet"]').type('Area 51')
+}
+
 
 
 //***********************AUTHENTICATION FUNCTIONS****************************//
