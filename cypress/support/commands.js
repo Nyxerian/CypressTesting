@@ -93,14 +93,16 @@ export function CreateNewPropertyAddressAndContact() {
     cy.get('[data-cy="street-address"]').type('141 circle road')
     cy.get('[data-cy="city"]').type('Cape Town')
     cy.get('[data-cy="zip-code"]').type('7551')
-    cy.get(':nth-child(3) > .q-field > .q-field__inner > .q-field__control > .q-field__control-container').type('South Africa')
-    cy.contains('South Africa').click()
+    cy.get(':nth-child(3) > .q-field > .q-field__inner > .q-field__control').type('South Africa').click()
     cy.get('[data-cy="email"]').type('test@tester.com')
     cy.get('.q-stepper__nav > .q-btn > .q-btn__wrapper > .q-btn__content').click()
 }
 
 export function CreateNewPropertyAuthentication() {
-
+    cy.get('.col-3 > .q-field > .q-field__inner > .q-field__control').type('10')
+    cy.get('.col-9 > .q-field > .q-field__inner > .q-field__control').click()
+    cy.contains('Shared WiFi').click()
+    cy.get('.finish-button > .q-btn__wrapper').click()
 }
 
 

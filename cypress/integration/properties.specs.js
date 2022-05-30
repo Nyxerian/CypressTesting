@@ -7,6 +7,7 @@ import {
     CreateNewPropertyIntegrationDetails,
     CreateNewPropertyCommunicationPreference,
     CreateNewPropertyAddressAndContact,
+    CreateNewPropertyAuthentication
 } from '../support/commands'
 
 describe('Login to site and navigate to properties', () => {
@@ -33,4 +34,7 @@ describe('Login to site and navigate to properties', () => {
         CreateNewPropertyAddressAndContact()
     })
 
+    it('Should fill in the Authentication portion of creating a new property', () => {
+        CreateNewPropertyAuthentication()
+    })
 });
