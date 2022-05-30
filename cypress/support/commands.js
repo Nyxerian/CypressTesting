@@ -105,6 +105,17 @@ export function CreateNewPropertyAuthentication() {
     cy.get('.finish-button > .q-btn__wrapper').click()
 }
 
+export function CreateNewPropertyGateway() {
+    cy.get('[data-cy="gateway-type-id"]').click()
+    cy.contains('Mikrotik').click()
+    cy.get('[data-cy="mac-address"]').type('2C:54:91:88:C9:E3')
+    cy.get('[data-cy="ip-address"]').type('17.5.7.8')
+    cy.get('[data-cy="dns-name"]').type('mytest.com')
+    cy.get('[data-cy="username"]').type('AdminTester13')
+    cy.get('[data-cy="password"]').type('2578*&%^^%')
+    cy.get('.finish-button > .q-btn__wrapper').click()
+}
+
 
 
 //***********************AUTHENTICATION FUNCTIONS****************************//
