@@ -1,6 +1,10 @@
 /// <reference types="Cypress" />
 import {
-    login, dashboardSubtitles, dashboardOverviewIncludes,dashboardDataIncludes,dashboardPropertyTypeIncludes, 
+    login,
+    DashboardSubtitles, 
+    DashboardOverviewIncludes,
+    DashboardDataValidation,
+    DashboardPropertyTypeIncludes, 
 } from '../support/commands'
 
 describe('Dashboard checks', () => {
@@ -8,16 +12,16 @@ describe('Dashboard checks', () => {
         login()    })
 
     it('should check subtitle values', () => {
-        dashboardSubtitles()
+        DashboardSubtitles()
     })
     it('should check the dashboard overview includes', () => {
-        dashboardOverviewIncludes()        
+        DashboardOverviewIncludes()        
     })
     it('should check the Property Type Selctor values', () => {
-        dashboardPropertyTypeIncludes() 
+        DashboardPropertyTypeIncludes() 
     })
     it('should show data usage on dashboard', () => {
-        dashboardDataIncludes()
+        DashboardDataValidation()
     })
     
 })
