@@ -7,6 +7,10 @@ import {
     CreateNewPropertyIntegrationDetails,
     CreateNewPropertyCommunicationPreference,
     CreateNewPropertyAddressAndContact,
+    CreateNewPropertyAuthentication,
+    CreateNewPropertyGateway,
+    CreateNewPropertyInterface,
+    CreateNewPropertyPortal,
 } from '../support/commands'
 
 describe('Login to site and navigate to properties', () => {
@@ -33,4 +37,19 @@ describe('Login to site and navigate to properties', () => {
         CreateNewPropertyAddressAndContact()
     })
 
+    it('Should fill in the Authentication portion of creating a new property', () => {
+        CreateNewPropertyAuthentication()
+    })
+    
+    it('Should set the Gateway details for the new Property', () => {
+        CreateNewPropertyGateway()
+    })
+
+    it('Should fill in the Interface details for the new Property', () => {
+        CreateNewPropertyInterface()
+    })
+
+    it('Should select IO Digital from the list', () => {
+        CreateNewPropertyPortal()
+    })
 });

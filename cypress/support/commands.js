@@ -93,25 +93,52 @@ export function CreateNewPropertyAddressAndContact() {
     cy.get('[data-cy="street-address"]').type('141 circle road')
     cy.get('[data-cy="city"]').type('Cape Town')
     cy.get('[data-cy="zip-code"]').type('7551')
-    cy.get(':nth-child(3) > .q-field > .q-field__inner > .q-field__control > .q-field__control-container').type('South Africa')
-    cy.contains('South Africa').click()
+    cy.get(':nth-child(3) > .q-field > .q-field__inner > .q-field__control').type('South Africa').click()
     cy.get('[data-cy="email"]').type('test@tester.com')
     cy.get('.q-stepper__nav > .q-btn > .q-btn__wrapper > .q-btn__content').click()
 }
 
-export function CreateNewPropertyAuthentication() {
+//***********************PROPERTY AUTHENTICATION FUNCTIONS****************************//
 
+export function CreateNewPropertyAuthentication() {
+    cy.get('.col-3 > .q-field > .q-field__inner > .q-field__control').type('10')
+    cy.get('.col-9 > .q-field > .q-field__inner > .q-field__control').click()
+    cy.contains('Shared WiFi').click()
+    cy.get('.finish-button > .q-btn__wrapper').click()
 }
 
+//***********************PROPERTY GATEWAY FUNCTIONS****************************//
 
+export function CreateNewPropertyGateway() {
+    cy.get('[data-cy="gateway-type-id"]').click()
+    cy.contains('Mikrotik').click()
+    cy.get('[data-cy="mac-address"]').type('2C:54:91:88:C9:E3')
+    cy.get('[data-cy="ip-address"]').type('17.5.7.8')
+    cy.get('[data-cy="dns-name"]').type('mytest.com')
+    cy.get('[data-cy="username"]').type('AdminTester13')
+    cy.get('[data-cy="password"]').type('2578*&%^^%')
+    cy.get('.finish-button > .q-btn__wrapper').click()
+}
 
-//***********************AUTHENTICATION FUNCTIONS****************************//
+//***********************PROPERTY INTERFACE FUNCTIONS****************************//
 
-//***********************GATEWAY FUNCTIONS****************************//
+export function CreateNewPropertyInterface() {
+    cy.contains('Interface Type').click()
+    cy.contains('FIAS').click()
+    cy.get('[data-cy="host"]').type('HostIsHosting')
+    cy.contains('Package').click()
+    cy.contains('10GB / 10Mbps').click()
+    cy.get('[data-cy="port"]').type('8000')
+    cy.get('[data-cy="sales-outlet"]').type('Area 51')
+    cy.get('.finish-button > .q-btn__wrapper > .q-btn__content').click()
+}
+//***********************PROPERTY PORTAL FUNCTIONS****************************//
 
-//***********************INTERFACE FUNCTIONS****************************//
-
-//***********************PORTAL FUNCTIONS****************************//
+export function CreateNewPropertyPortal() {
+    cy.get('[data-cy="portal-id"]').click()
+    cy.contains('IO Digital').click()
+    cy.get('.finish-button-black > .q-btn__wrapper > .q-btn__content').click()
+}
 
 
 //***********************GROUP CLEAN UP FUNCTIONS****************************//
