@@ -23,3 +23,5 @@ Issue with selecting IO Digital option from the dropdown menu on the 3rd page of
 Section three: Properties
 
 I had a lot of issues with dropdown menus, even with the help - and the hover activated dropdowns were even worse but i've managed to get it working. The bulk of the work seems to be done even with the disruption on Friday. I was worried when I couldnt login to the testing over the weekend and thought I would need more time but it seems my subconscious has been working anyway and I feel even more at ease with writing the code today.
+
+I both love the click() keyword and hate it. Sometimes it works and sometimes, even though I used it in exactly the same way previously, it doesn't and the issue is always around dropdowns and selectors that are NOT selectors due to them being made either with a custom UI or bootstrap.
