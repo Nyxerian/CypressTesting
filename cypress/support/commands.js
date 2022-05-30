@@ -32,9 +32,13 @@ export function dashboardPropertyTypeIncludes() {
 
 //***********************GROUPS FUNCTIONS****************************//
 
+//Due to issue on system where even deleted group names are still considered "used" Tester needs to manaually change the 
+//group name in order to test. FOUR changes are needed and will be marked below:
+
 export function AddNewGroupBasicsPage() {
     cy.get('.top-menu-button > .q-btn > .q-btn__wrapper > .q-btn__content').click()
-    cy.get('[data-cy="name"]').type('My New Test Group25')
+    //CHANGE GROUP TEST NAME HERE
+    cy.get('[data-cy="name"]').type('My New Test Group29')
     cy.get('[data-cy="contact-email"]').type('my-new-test-group@io.co.za')
     cy.get('.q-stepper__nav > .q-btn > .q-btn__wrapper > .q-btn__content').click()
 }
@@ -59,6 +63,9 @@ export function NavigateToPropertiesPage() {
 export function CreateNewPropertyNameAndType() {
     cy.get('.top-menu-button > .q-btn > .q-btn__wrapper > .q-btn__content').click()
     cy.get('[data-v-7c523294=""][data-v-4b79beaa=""] > :nth-child(1) > .q-input > .q-field__inner > .q-field__control').type('My Test Hotel')
+    cy.contains('Add this property to a group').click()
+    //CHANGE GROUP TEST NAME HERE
+    cy.contains('My New Test Group29').click()
     cy.get(':nth-child(4) > .q-field > .q-field__inner > .q-field__control').click()
     cy.contains('Hotel').click()   
 }
@@ -125,9 +132,6 @@ export function CreateNewPropertyPortal() {
     cy.get('.finish-button-black > .q-btn__wrapper > .q-btn__content').click()
 }
 
-//***********************CLEAN UP FUNCTIONS****************************//
-
-
 //***********************VALIDATION FUNCTIONS****************************//
 
 export function DashboardDataValidation() {
@@ -138,17 +142,15 @@ export function DashboardDataValidation() {
 
 export function NewGroupValidation() {
     //CHANGE GROUP TEST NAME HERE
-    cy.get('.row.q-pb-md > .col-12').should('include.text', 'My New Test Group27')
-
+    cy.get('.row.q-pb-md > .col-12').should('include.text', 'My New Test Group29')
     cy.get('.row.q-pb-md > .col-12').should('include.text',  '0',)   
     cy.get(':nth-child(1) > .q-td.text-center > .q-badge').should('include.text', 'draft')
 }
 
 export function CheckNewPropertyStatus() {
     cy.get(':nth-child(4) > [style="width: 260px; text-transform: capitalize;"]').should('include.text', 'My Test Hotel')
-
     //CHANGE GROUP TEST NAME HERE
-    cy.get(':nth-child(4) > :nth-child(4)').should('include.text', 'My New Test Group27')
+    cy.get(':nth-child(4) > :nth-child(4)').should('include.text', 'My New Test Group29')
     cy.get(':nth-child(4) > [style="min-width: 100px; text-transform: capitalize;"]').should('include.text',  'Hotel',)
     cy.get(':nth-child(4) > .q-td.text-center').should('include.text', 'active')
 }
@@ -156,3 +158,16 @@ export function CheckNewPropertyStatus() {
 
 //***********************GROUP CLEAN UP FUNCTIONS****************************//
 
+export function DeleteTestGroup() {
+    cy.get(':nth-child(1) > .text-right > .q-btn > .q-btn__wrapper').click()
+    cy.get(':nth-child(4) > .col-12 > :nth-child(1) > .q-btn > .q-btn__wrapper > .q-btn__content').click()
+    cy.contains('Delete Group').click()
+}
+
+export function DeleteTestProperty() {
+    cy.get(':nth-child(3) > .col-12 > .q-btn-group > .q-btn-dropdown__arrow-container > .q-btn__wrapper > .q-btn__content', {timeout: 25000}).click()
+    cy.get('[href="/customer/properties"] > .q-item > .q-item__section > .q-item__label').click()
+    cy.get(':nth-child(4) > .text-right > .q-btn > .q-btn__wrapper > .q-btn__content > .block').click()
+    cy.get(':nth-child(7) > .col-12 > :nth-child(1) > .q-btn > .q-btn__wrapper > .q-btn__content').click()
+    cy.contains('Delete Property').click()
+}
