@@ -29,5 +29,8 @@ I both love the click() keyword and hate it. Sometimes it works and sometimes, e
   
 I have completed all 3 main tasks barring the validations and checking status - will have to ask Michael how that would work. I read about validations over the weekend and hope to impliment them into the code after lunch in order to improve it. No idea how i'll do the "Clean Up" task as it would require individual targeting - will see what Michael thinks and maybe he could set me on the path to finding it out for myself.
   
- CODE IMPROVEMENT:
+ 
+  
+  CODE IMPROVEMENT:
   12pm Monday 30th May: I have started adding validations to my code. Hopefully it works as intended.
+  EDIT: Validations added in areas requested in the code.
