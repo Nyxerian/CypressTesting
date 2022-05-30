@@ -30,7 +30,7 @@ I both love the click() keyword and hate it. Sometimes it works and sometimes, e
 I have completed all 3 main tasks barring the validations and checking status - will have to ask Michael how that would work. I read about validations over the weekend and hope to impliment them into the code after lunch in order to improve it. No idea how i'll do the "Clean Up" task as it would require individual targeting - will see what Michael thinks and maybe he could set me on the path to finding it out for myself.
   
 Section four:
-  I've been requested to write some code that will "clean up" (delete) any new group and property my test creates.
+  I've been requested to write some code that will "clean up" (delete) any new group and property my test creates. After clearing up some points with Michael (I had incorrectly read a part of the assignement) I was able to create a spec that deleted the created test group and property. It is not targeted and can easily delete the incorrect group if it is named something similar to the group test name. The same applies to the property. I hope that I can learn to imporve this code more fully.
  
   
 CODE IMPROVEMENT:
@@ -38,4 +38,4 @@ CODE IMPROVEMENT:
   EDIT: Validations added in areas requested in the code.
 
   
- Section four:
+
