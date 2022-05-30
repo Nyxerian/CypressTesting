@@ -30,14 +30,6 @@ export function dashboardPropertyTypeIncludes() {
     cy.contains('Residential')
 }
 
-export function dashboardDataIncludes() {
-    cy.get('[data-cy="totalAccountsActivatedChart"]').should('include.text', 'Total # of Accounts Activated')
-    cy.get('[data-cy="totalDevicesChart"] > .overview-title').should('include.text', 'Total # of Devices')
-    cy.get('[data-cy="gbUsageTotalChart"] > .overview-title').should('include.text', 'GB Usage Total')
-
-}
-
-
 //***********************GROUPS FUNCTIONS****************************//
 
 export function AddNewGroupBasicsPage() {
@@ -136,18 +128,31 @@ export function CreateNewPropertyPortal() {
 //***********************CLEAN UP FUNCTIONS****************************//
 
 
-
-
 //***********************VALIDATION FUNCTIONS****************************//
 
-export function CheckNewGroupStatus() {
-    cy.get('.row.q-pb-md > .col-12').should('include.text', 'My New Test Group25')
+export function DashboardDataValidation() {
+    cy.get('[data-cy="totalAccountsActivatedChart"]').should('include.text', 'Total # of Accounts Activated')
+    cy.get('[data-cy="totalDevicesChart"] > .overview-title').should('include.text', 'Total # of Devices')
+    cy.get('[data-cy="gbUsageTotalChart"] > .overview-title').should('include.text', 'GB Usage Total')
+}
+
+export function NewGroupValidation() {
+    //CHANGE GROUP TEST NAME HERE
+    cy.get('.row.q-pb-md > .col-12').should('include.text', 'My New Test Group27')
+
     cy.get('.row.q-pb-md > .col-12').should('include.text',  '0',)   
     cy.get(':nth-child(1) > .q-td.text-center > .q-badge').should('include.text', 'draft')
 }
 
 export function CheckNewPropertyStatus() {
     cy.get(':nth-child(4) > [style="width: 260px; text-transform: capitalize;"]').should('include.text', 'My Test Hotel')
+
+    //CHANGE GROUP TEST NAME HERE
+    cy.get(':nth-child(4) > :nth-child(4)').should('include.text', 'My New Test Group27')
     cy.get(':nth-child(4) > [style="min-width: 100px; text-transform: capitalize;"]').should('include.text',  'Hotel',)
     cy.get(':nth-child(4) > .q-td.text-center').should('include.text', 'active')
 }
+
+
+//***********************GROUP CLEAN UP FUNCTIONS****************************//
+

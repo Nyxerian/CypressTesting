@@ -4,7 +4,7 @@ import {
     AddNewGroupBasicsPage, 
     AddNewGroupPropertiesPage, 
     AddNewGroupPortalPage, 
-    CheckNewGroupStatus
+    NewGroupValidation
 } from '../support/commands'
 
 describe('Groups page actions', function () {
@@ -27,7 +27,9 @@ describe('Groups page actions', function () {
     it('should select the IO Digital option from the dropdown', () => {
         AddNewGroupPortalPage()
     })
-    it('should Validate the new group status on the groups page', () => {
-        CheckNewGroupStatus()
+
+    it('should check the new group status on the groups page', () => {
+        NewGroupValidation()
+
     })
 })
