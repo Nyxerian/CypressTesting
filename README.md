@@ -36,6 +36,15 @@ Section four:
 CODE IMPROVEMENT:
   12pm Monday 30th May: I have started adding validations to my code. Hopefully it works as intended.
   EDIT: Validations added in areas requested in the code.
+  
+  I have created an account on Cypress.io and invited the teammembers mentioned. Busy running test to see how it goes. 
+  EDIT: itw went badly - since it tested the spec.js files out of order and they are dependent on each other.
+  created new project to try again after renaming and updating the spec files in numbered order.
+  
+CYPRESS test via dashboard was completed it showed lots of failed tests even if the terminal showed them passing. When I checked the log, its states that a lot of the functions i created are not "functions' - its pretty confusing since the tests have run and completed correctly. I do not believe I know what I am doing with Cypress Dashboard and hope to learn how to read it better soon.
+  
+  
+  ASSESSMENT COMPLETED.
 
   
 
