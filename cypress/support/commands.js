@@ -134,6 +134,12 @@ export function CreateNewPropertyInterface() {
 }
 //***********************PROPERTY PORTAL FUNCTIONS****************************//
 
+export function CreateNewPropertyPortal() {
+    cy.get('[data-cy="portal-id"]').click()
+    cy.contains('IO Digital').click()
+    cy.get('.finish-button-black > .q-btn__wrapper > .q-btn__content').click()
+}
+
 
 //***********************GROUP CLEAN UP FUNCTIONS****************************//
 

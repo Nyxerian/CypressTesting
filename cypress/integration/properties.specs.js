@@ -10,6 +10,7 @@ import {
     CreateNewPropertyAuthentication,
     CreateNewPropertyGateway,
     CreateNewPropertyInterface,
+    CreateNewPropertyPortal,
 } from '../support/commands'
 
 describe('Login to site and navigate to properties', () => {
@@ -46,5 +47,9 @@ describe('Login to site and navigate to properties', () => {
 
     it('Should fill in the Interface details for the new Property', () => {
         CreateNewPropertyInterface()
+    })
+
+    it('Should select IO Digital from the list', () => {
+        CreateNewPropertyPortal()
     })
 });
